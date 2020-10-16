@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static "css/demo.css" %}">
+    <title>Hyderabad Jobs Information</title>
+</head>
+<body>
+<h1>Hyderabad Jobs Information</h1>
+<img src="{% static "images/3.jpg"%}" alt="">
+<img src="{% static "images/download.jfif"%}" alt="">
+{% if hydjobs_list %}
+  <table>
+      <thead>
+      <th>DATE</th>
+      <th>COMPANY</th>
+      <th>TITLE</th>
+      <th>ELIGIBILITY</th>
+      <th>ADDRESS</th>
+      <th>EMAIL</th>
+      <th>PHONE NUMBER</th>
+      </thead>
+      {% for jobs in hydjobs_list %}
+         <tr>
+             <td>{{jobs.date}}</td>
+             <td>{{jobs.company}}</td>
+             <td>{{jobs.title}}</td>
+             <td>{{jobs.eligibility}}</td>
+             <td>{{jobs.address}}</td>
+             <td>{{jobs.email}}</td>
+             <td>{{jobs.phonenumber}}</td>
+         </tr>
+      {% endfor %}
+  </table>
+{% else %}
+   <p>NO JOBS FOUND</p>
+{%endif%}
+</body>
+</html>

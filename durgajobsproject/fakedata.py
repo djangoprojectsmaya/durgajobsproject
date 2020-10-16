@@ -1,0 +1,11 @@
+from faker import Faker
+fake=Faker('en_IN')
+print(fake.name())
+print(fake.first_name())
+print(fake.last_name())
+print(fake.date())
+print(fake.random_number(5))
+print(fake.email())
+print(fake.city())
+print(fake.random_int(min=0,max=999))
+print(fake.random_element(elements=('PM','PL','SE')))
